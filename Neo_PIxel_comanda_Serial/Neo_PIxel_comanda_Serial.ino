@@ -32,7 +32,7 @@ void loop() {
     Serial.println(albastru);
 
     for (int foo = 0; foo <= NumarPixeli; ++foo) {
-      pixels.setPixelColor(foo, pixels.Color(rosu, verde, albastru));
+      pixels.setPixelColor(foo, pixels.Color(verde, rosu, albastru));
     }
 
     pixels.show();
