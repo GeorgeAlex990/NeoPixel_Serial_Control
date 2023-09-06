@@ -20,19 +20,19 @@ void loop() {
   // put your main code here, to run repeatedly:
   if (Serial.available()){
     pixels.clear();
-    String DataIn = Serial.readString();
+    String DataIn = Serial.readString(); // Citesc valorile RGB (format rrrgggbbb)
     Serial.print("Rosu: ");
-    rosu = DataIn.substring(0, 3).toInt();
+    rosu = DataIn.substring(0, 3).toInt(); // Sparg valorile pentru rosu
     Serial.println(rosu);
     Serial.print("Verde: ");
-    verde = DataIn.substring(3, 6).toInt();
+    verde = DataIn.substring(3, 6).toInt(); // Sparg valorile pentru verde
     Serial.println(verde);
     Serial.print("Albastru: ");
-    albastru = DataIn.substring(6, 9).toInt();
+    albastru = DataIn.substring(6, 9).toInt(); // Sparg valorile pentru albastru
     Serial.println(albastru);
 
     for (int foo = 0; foo <= NumarPixeli; ++foo) {
-      pixels.setPixelColor(foo, pixels.Color(verde, rosu, albastru));
+      pixels.setPixelColor(foo, pixels.Color(rosu, verde, albastru));
     }
 
     pixels.show();
